@@ -1,0 +1,4 @@
+rootProject.name = "CleanArchitectureBookApp"
+include ':app'
+include ':domain'
+include ':data'
