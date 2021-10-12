@@ -1,27 +1,27 @@
-package com.learncoding.data
+package com.learncoding.data.repositories.books
 
-import com.learncoding.data.books.BooksLocalDataSource
 import com.learncoding.domain.entities.Volume
 import com.learncoding.domain.repositories.BooksRepository
+import kotlinx.coroutines.flow.Flow
 
 class BooksRepositoryImpl(
     private val localDataSource: BooksLocalDataSource,
     private val remoteDataSource: BooksRemoteDataSource
 ) : BooksRepository {
     override suspend fun getRemoteBooks(author: String): Result<List<Volume>> {
-        TODO("Not yet implemented")
+        return remoteDataSource.getBooks(author)
     }
 
-    override suspend fun getBookmarks(): kotlinx.coroutines.flow.Flow<List<Volume>> {
-        TODO("Not yet implemented")
+    override suspend fun getBookmarks(): Flow<List<Volume>> {
+        return localDataSource.getBookmarks()
     }
 
     override suspend fun bookmark(book: Volume) {
-        TODO("Not yet implemented")
+        return localDataSource.bookmark(book)
     }
 
     override suspend fun unbookmark(book: Volume) {
-        TODO("Not yet implemented")
+        return localDataSource.unbookmark(book)
     }
 
 }

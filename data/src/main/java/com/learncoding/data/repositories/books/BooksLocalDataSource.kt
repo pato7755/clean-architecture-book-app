@@ -1,4 +1,4 @@
-package com.learncoding.data.books
+package com.learncoding.data.repositories.books
 
 import com.learncoding.domain.entities.Volume
 import kotlinx.coroutines.flow.Flow
