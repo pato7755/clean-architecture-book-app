@@ -1,5 +1,6 @@
 package com.learncoding.data.repositories.books
 
+import com.learncoding.domain.common.Result
 import com.learncoding.domain.entities.Volume
 
 interface BooksRemoteDataSource {
